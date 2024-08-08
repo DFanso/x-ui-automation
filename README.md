@@ -1,4 +1,4 @@
-# v2ray-dfanso
+# x-ui-automation
 
 This Terraform configuration sets up a Linode instance with a V2Ray server and an X-UI control panel.
 
