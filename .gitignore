@@ -1,6 +1,8 @@
 # Local .terraform directories
 **/.terraform/*
-
+personal_access_token.txt
+key
+install_x_ui.sh
 # .tfstate files
 *.tfstate
 *.tfstate.*
@@ -32,3 +34,5 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+.terraform.lock.hcl
+.vscode/settings.json
