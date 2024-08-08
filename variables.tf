@@ -36,3 +36,19 @@ variable "ssh_key" {
   description = "SSH public key for access"
   type        = string
 }
+
+
+variable "cloudflare_email" {
+  description = "Cloudflare account email"
+  type        = string
+}
+
+variable "cloudflare_api_key" {
+  description = "Cloudflare API key"
+  type        = string
+}
+
+variable "cloudflare_zone_id" {
+  description = "The DNS zone ID to manage"
+  type        = string
+}

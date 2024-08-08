@@ -3,6 +3,10 @@ terraform {
     linode = {
       source = "linode/linode"
     }
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 4.0"
+    }
   }
 }
 
@@ -22,4 +26,13 @@ module "linode_instance" {
   ssh_key        = var.ssh_key
 }
 
+module "cloudflare_record" {
+  source = "./modules/cloudflare"
+
+  cloudflare_email   = var.cloudflare_email
+  cloudflare_api_key = var.cloudflare_api_key
+  zone_id            = var.cloudflare_zone_id
+  record_name        = "vpn.dfanso.dev"
+  ip_address         = module.linode_instance.linode_instance_ip
+}
 
