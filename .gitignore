@@ -2,6 +2,7 @@
 **/.terraform/*
 personal_access_token.txt
 key
+install_x_ui.sh
 # .tfstate files
 *.tfstate
 *.tfstate.*
