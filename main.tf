@@ -32,7 +32,7 @@ module "cloudflare_record" {
   cloudflare_email = var.cloudflare_email
   cloudflare_api_key = var.cloudflare_api_key
   zone_id = var.cloudflare_zone_id
-  record_name = "vpn.dfanso.dev"
+  record_name = var.record_name
   ip_address = module.linode_instance.linode_instance_ip
 }
 
