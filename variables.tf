@@ -57,3 +57,8 @@ variable "ssh_private_key" {
   description = "Path to the private SSH key"
   type        = string
 }
+
+variable "record_name" {
+  description = "The name of the DNS record"
+  type        = string
+}
