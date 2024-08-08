@@ -24,6 +24,7 @@ module "linode_instance" {
   image          = var.image
   root_pass      = var.root_pass
   ssh_key        = var.ssh_key
+  ssh_private_key = var.ssh_private_key
 }
 
 module "cloudflare_record" {

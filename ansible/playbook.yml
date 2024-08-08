@@ -1,6 +1,0 @@
-# playbook.yml
-- hosts: linode
-  become: yes
-  tasks:
-    - name: Run a script
-      shell: /scripts/script.sh

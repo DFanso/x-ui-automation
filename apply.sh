@@ -1,5 +1,8 @@
 #!/bin/bash
 
+read -sp 'Enter SSH password: ' SSH_PASSWORD
+echo
+
 # Run Terraform
 terraform apply -auto-approve
 
@@ -7,8 +10,8 @@ terraform apply -auto-approve
 LINODE_IP=$(terraform output -raw linode_instance_ip)
 
 # Generate Ansible inventory
-echo "[linode]" > inventory.ini
-echo "$LINODE_IP" >> inventory.ini
+echo "[linode]" > ansible/inventory.ini
+echo "$LINODE_IP" >> ansible/inventory.ini
 
 # Run Ansible Playbook
-ansible-playbook -i inventory.ini playbook.yml --extra-vars "ansible_ssh_private_key_file=/key ansible_user=root"
+ansible-playbook -i ansible/inventory.ini ansible/playbook.yml --extra-vars "ansible_ssh_pass=$SSH_PASSWORD ansible_user=root"

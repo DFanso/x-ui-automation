@@ -52,3 +52,8 @@ variable "cloudflare_zone_id" {
   description = "The DNS zone ID to manage"
   type        = string
 }
+
+variable "ssh_private_key" {
+  description = "Path to the private SSH key"
+  type        = string
+}
