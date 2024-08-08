@@ -1,6 +1,7 @@
 # Local .terraform directories
 **/.terraform/*
 personal_access_token.txt
+key
 # .tfstate files
 *.tfstate
 *.tfstate.*
@@ -33,3 +34,4 @@ override.tf.json
 .terraformrc
 terraform.rc
 .terraform.lock.hcl
+.vscode/settings.json
