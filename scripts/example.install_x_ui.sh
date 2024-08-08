@@ -20,8 +20,8 @@ chmod 600 /usr/local/x-ui/ssl/privkey.pem
 # Download and run the installation script
 bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh) << EOF
 y
-dfanso
-Iamleogavin@0214
+userName
+password
 31402
 EOF
 

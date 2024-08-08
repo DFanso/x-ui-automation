@@ -52,6 +52,15 @@ This Terraform configuration sets up a Linode instance with a V2Ray server and a
    sudo certbot certonly --standalone --non-interactive --agree-tos --email youremail@outlook.com --domains vpn.domain.dev
    ```
 
+   ```
+   bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh) << EOF
+y
+userName
+password
+31402
+EOF
+   ```
+
    Replace `youremail@outlook.com` with the email address you want to use for the SSL certificate, and `vpn.domain.dev` with your desired domain.
 
 After the Terraform apply completes, you can access the X-UI control panel at `http://vpn.domain.dev`. Use the root password you provided in the `terraform.tfvars` file to log in.
