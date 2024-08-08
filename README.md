@@ -15,6 +15,7 @@ This Terraform configuration sets up a Linode instance with a V2Ray server and a
   - `cloudflare_email`: Your Cloudflare email address.
   - `cloudflare_api_key`: Your Cloudflare API key.
   - `cloudflare_zone_id`: Your Cloudflare zone ID.
+  - `record_name`: Your domain name.
 
 ## Usage
 
@@ -46,24 +47,19 @@ This Terraform configuration sets up a Linode instance with a V2Ray server and a
 
 5. Update the `install_x_ui.sh` script:
 
-   Change the following line:
-
-   ```
-   sudo certbot certonly --standalone --non-interactive --agree-tos --email youremail@outlook.com --domains vpn.domain.dev
-   ```
-
-   ```
-   bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh) << EOF
-y
-userName
-password
-31402
-EOF
-   ```
-
-   Replace `youremail@outlook.com` with the email address you want to use for the SSL certificate, and `vpn.domain.dev` with your desired domain.
+```
+USERNAME=""
+PASSWORD=""
+EMAIL=""
+DOMAIN=""
+```
 
 After the Terraform apply completes, you can access the X-UI control panel at `http://vpn.domain.dev`. Use the root password you provided in the `terraform.tfvars` file to log in.
+
+## Note
+
+- When copying the database, make sure to change the settings table and inbound table domain names accordingly.
+- Use a Bash shell to run the Terraform commands, as PowerShell (PWSH) may not work properly.
 
 ## License
 

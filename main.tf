@@ -22,7 +22,7 @@ provider "cloudflare" {
 resource "null_resource" "wait_for_dns" {
   depends_on = [module.cloudflare_record]
   provisioner "local-exec" {
-    command = "sleep 120"  # Adjust the sleep duration as needed
+    command = "sleep 10"  # Adjust the sleep duration as needed
   }
 }
 

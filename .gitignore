@@ -36,3 +36,4 @@ override.tf.json
 terraform.rc
 .terraform.lock.hcl
 .vscode/settings.json
+x-ui.db
