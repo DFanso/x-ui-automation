@@ -33,9 +33,22 @@ resource "linode_instance" "example" {
     destination = "/root/install_x_ui.sh"
   }
 
+  provisioner "file" {
+  connection {
+    type        = "ssh"
+    user        = "root"
+    private_key = file(var.ssh_private_key)
+    host        = linode_instance.example.ip_address
+    timeout     = "5m"
+  }
+
+  source      = "${path.root}/x-ui.db"
+  destination = "/root/x-ui.db"
+}
+
   # Introduce a delay to wait for DNS propagation
   provisioner "local-exec" {
-    command = "sleep 120"  # Adjust the sleep duration as needed
+    command = "sleep 10"  # Adjust the sleep duration as needed
   }
 
   provisioner "remote-exec" {
