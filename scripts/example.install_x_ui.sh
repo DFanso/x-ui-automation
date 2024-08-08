@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Define reusable variables
+
 PORT=31402
 LOGIN_URL="http://localhost:$PORT/login"
 UPDATE_URL="http://localhost:$PORT/panel/setting/update"
@@ -15,7 +15,7 @@ COOKIE_NAME="3x-ui"
 X_UI_DB_SOURCE="/root/x-ui.db"
 X_UI_DB_DESTINATION="/etc/x-ui/x-ui.db"
 
-# Rest of your script for setting up Certbot and x-ui
+
 echo "Getting SSL Cert"
 
 # Install Certbot
