@@ -48,7 +48,7 @@ resource "linode_instance" "example" {
 
   # Introduce a delay to wait for DNS propagation
   provisioner "local-exec" {
-    command = "sleep 10"  # Adjust the sleep duration as needed
+    command = "sleep 20"  # Adjust the sleep duration as needed
   }
 
   provisioner "remote-exec" {
@@ -63,7 +63,6 @@ resource "linode_instance" "example" {
     inline = [
       "ls -l /root",        # List files in /root to check if the script is there
       "chmod +x /root/install_x_ui.sh",
-      "/root/install_x_ui.sh"
     ]
   }
 }
