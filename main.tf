@@ -1,7 +1,19 @@
+
 terraform {
+
+  cloud {
+
+    organization = "DFanso"
+
+    workspaces {
+      name = "V2ray"
+    }
+  }
+
+
   required_providers {
     linode = {
-      source  = "linode/linode"
+      source = "linode/linode"
     }
     cloudflare = {
       source  = "cloudflare/cloudflare"
@@ -22,18 +34,18 @@ provider "cloudflare" {
 resource "null_resource" "wait_for_dns" {
   depends_on = [module.cloudflare_record]
   provisioner "local-exec" {
-    command = "sleep 20"  # Adjust the sleep duration as needed
+    command = "sleep 20" # Adjust the sleep duration as needed
   }
 }
 
 module "cloudflare_record" {
   source = "./modules/cloudflare"
 
-  cloudflare_email = var.cloudflare_email
+  cloudflare_email   = var.cloudflare_email
   cloudflare_api_key = var.cloudflare_api_key
-  zone_id = var.cloudflare_zone_id
-  record_name = var.record_name
-  ip_address = module.linode_instance.linode_instance_ip
+  zone_id            = var.cloudflare_zone_id
+  record_name        = var.record_name
+  ip_address         = module.linode_instance.linode_instance_ip
 }
 
 module "linode_instance" {
