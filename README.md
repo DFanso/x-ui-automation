@@ -17,6 +17,20 @@ This Terraform configuration sets up a Linode instance with a V2Ray server and a
   - `cloudflare_zone_id`: Your Cloudflare zone ID.
   - `record_name`: Your domain name.
 
+
+- If you dont want to use terraform comment this line on main.tf
+
+   ```
+    cloud {
+
+    organization = "DFanso"
+
+    workspaces {
+      name = "V2ray"
+    }
+  }
+  ```
+
 ## Usage
 
 1. Initialize the Terraform working directory:
